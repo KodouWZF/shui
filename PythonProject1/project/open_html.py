@@ -66,6 +66,6 @@ def upload_file():
 
     return {"code": 202, "result": result}
 
-
+#开始
 if __name__ == "__main__":
     app.run("192.168.235.201", 9000, debug=True)
