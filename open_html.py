@@ -33,7 +33,7 @@ model = nn.Sequential(
     nn.LogSoftmax(dim=-1)
 )
 # ===========================加载权重 ==========================
-state_dict = torch.load("./save/best.pt")
+state_dict = torch.load("./save/best.pt")  # 删除: state_dict = torch.load("./save/best.pt", weights_only=True)
 model.load_state_dict(state_dict)  # 模型结构加入权重
 
 transform = transforms.Compose([
@@ -45,7 +45,6 @@ label = dataset.classes
 @app.route("/")
 def detect_number():
     return render_template("index.html")
-
 
 # ---- 上传文件，并识别该内容 ----
 @app.route('/upload', methods=['GET', 'POST'])
@@ -66,6 +65,8 @@ def upload_file():
 
     return {"code": 202, "result": result}
 
-
 if __name__ == "__main__":
     app.run("192.168.235.201", 9000, debug=True)
+
+
+
