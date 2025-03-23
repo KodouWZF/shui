@@ -68,4 +68,4 @@ def upload_file():
 
 #开始
 if __name__ == "__main__":
-    app.run("192.168.235.201", 9000, debug=True)
+    app.run("192.168.142.201", 9000, debug=True)
